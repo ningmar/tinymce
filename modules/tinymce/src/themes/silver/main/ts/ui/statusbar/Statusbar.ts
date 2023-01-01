@@ -49,9 +49,9 @@ const renderStatusbar = (editor: Editor, providersBackstage: UiFactoryBackstageP
       components.push(renderWordCount(editor, providersBackstage));
     }
 
-    if (Options.useBranding(editor)) {
-      components.push(renderBranding());
-    }
+    // if (Options.useBranding(editor)) {
+    //   components.push(renderBranding());
+    // }
 
     if (components.length > 0) {
       return [{

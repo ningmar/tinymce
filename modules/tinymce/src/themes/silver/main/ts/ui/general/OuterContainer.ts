@@ -387,7 +387,7 @@ export default Sketcher.composite<OuterContainerSketchSpec, OuterContainerSketch
     partMultipleToolbar,
     partSocket,
     partSidebar,
-    partPromotion,
+    // partPromotion,
     partThrobber,
     partViewWrapper,
     partEditorContainer
