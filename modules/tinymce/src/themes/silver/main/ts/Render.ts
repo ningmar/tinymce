@@ -191,8 +191,6 @@ const setup = (editor: Editor): RenderInfo => {
     const hasMultipleToolbar = Options.isMultipleToolbars(editor);
     const hasToolbar = Options.isToolbarEnabled(editor);
     const hasMenubar = Options.isMenubarEnabled(editor);
-    const shouldHavePromotion = Options.promotionEnabled(editor);
-    const partPromotion = makePromotion();
     const hasAnyContents = hasMultipleToolbar || hasToolbar || hasMenubar;
 
     const getPartToolbar = () => {
@@ -205,7 +203,7 @@ const setup = (editor: Editor): RenderInfo => {
       }
     };
 
-    const menubarCollection = shouldHavePromotion ? [ partPromotion, partMenubar ] : [ partMenubar ];
+    const menubarCollection = [ partMenubar ];
 
     return OuterContainer.parts.header({
       dom: {
@@ -224,15 +222,6 @@ const setup = (editor: Editor): RenderInfo => {
       editor,
       // TINY-9223: If using a sticky toolbar, which sink should it really go in?
       sharedBackstage: backstages.popup.shared
-    });
-  };
-
-  const makePromotion = () => {
-    return OuterContainer.parts.promotion({
-      dom: {
-        tag: 'div',
-        classes: [ 'tox-promotion' ],
-      },
     });
   };
 
